@@ -1,7 +1,7 @@
 -- Q4
 -- Your query goes here.
-drop view if exists aggregates_by_route_view
-drop view if exists route_data_view
+drop view if exists aggregates_by_route_view;
+drop view if exists route_data_view;
 
 create view aggregates_by_route_view as
     select route_id, count(station_id) as total_stations, sum(distance_from_last_station_miles) as total_miles
