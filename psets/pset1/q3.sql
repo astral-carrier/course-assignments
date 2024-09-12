@@ -1,8 +1,11 @@
 -- Q3
 -- Your query goes here.
-create view if not exists accepted_periods_view as
+drop view if exists accepted_periods_view
+drop view if exists selected_station_view
+
+create view accepted_periods_view as
     select time_period_id from time_periods where time_period_id == 'time_period_06' or time_period_id == 'time_period_07';
-create view if not exists selected_station_view as
+create view selected_station_view as
     select station_id from stations where station_name == 'Kendall/MIT'
 
 select season, line_id, direction, total_ons
