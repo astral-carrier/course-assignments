@@ -11,4 +11,5 @@ create view route_data_view as
         from routes;
 
 select route_data_view.route_id, direction, route_name, total_stations, total_miles
-    from route_data_view join aggregates_by_route_view abrv on route_data_view.route_id = abrv.route_id;
+    from route_data_view join aggregates_by_route_view abrv on route_data_view.route_id = abrv.route_id
+    order by total_stations desc, total_miles desc;
